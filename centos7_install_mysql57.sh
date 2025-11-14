@@ -49,6 +49,7 @@ fi
 cat /dev/null > /etc/my.cnf
 echo "[client]" > /etc/my.cnf
 echo "default-character-set=utf8" >> /etc/my.cnf
+echo "socket=${mysqlDataDir}/mysql57.sock" >> /etc/my.cnf
 echo "" >> /etc/my.cnf
 echo "[mysqld]" >> /etc/my.cnf
 echo "server-id=127001" >> /etc/my.cnf
