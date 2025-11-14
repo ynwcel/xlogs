@@ -57,6 +57,13 @@ echo "datadir=${mysqlDataDir}" >> /etc/my.cnf
 echo "socket=${mysqlDataDir}/mysql57.sock" >> /etc/my.cnf
 echo "character-set-server=utf8" >> /etc/my.cnf
 echo "collation-server=utf8_general_ci" >> /etc/my.cnf
+echo "" >> /etc/my.cnf
+echo "slow_query_log=1" >> /etc/my.cnf
+echo "long_query_time=2" >> /etc/my.cnf
+echo "slow_query_log_file=${mysqlDataDir}/mysql57-slow.log" >> /etc/my.cnf
+echo "" >> /etc/my.cnf
+echo "log_error=${mysqlDataDir}/mysql57-error.log" >> /etc/my.cnf
+echo "log_bin=${mysqlDataDir}/mysql57-bin.log" >> /etc/my.cnf
 cat /etc/my.cnf
 
 echo "5.启动MySQL"
