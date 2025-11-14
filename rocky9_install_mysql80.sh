@@ -50,6 +50,7 @@ fi
 cat /dev/null > /etc/my.cnf
 echo "[client]" > /etc/my.cnf
 echo "default-character-set=utf8mb4" >> /etc/my.cnf
+echo "socket=${mysqlDataDir}/mysql80.sock" >> /etc/my.cnf
 echo "" >> /etc/my.cnf
 echo "[mysqld]" >> /etc/my.cnf
 echo "server-id=127001" >> /etc/my.cnf
@@ -57,6 +58,13 @@ echo "datadir=${mysqlDataDir}" >> /etc/my.cnf
 echo "socket=${mysqlDataDir}/mysql80.sock" >> /etc/my.cnf
 echo "character-set-server=utf8mb4" >> /etc/my.cnf
 echo "collation-server=utf8mb4_unicode_ci" >> /etc/my.cnf
+echo "" >> /etc/my.cnf
+echo "slow_query_log=1" >> /etc/my.cnf
+echo "long_query_time=2" >> /etc/my.cnf
+echo "slow_query_log_file=${mysqlDataDir}/mysql80-slow.log" >> /etc/my.cnf
+echo "" >> /etc/my.cnf
+echo "log_error=${mysqlDataDir}/mysql80-error.log" >> /etc/my.cnf
+echo "log_bin=${mysqlDataDir}/mysql80-bin.log" >> /etc/my.cnf
 cat /etc/my.cnf
 
 echo "5.初始化mysql并获取初始密码"
